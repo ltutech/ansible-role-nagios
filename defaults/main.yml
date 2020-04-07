@@ -5,6 +5,7 @@
 download_dir: "{{ ansible_env.HOME }}/nagios"
 
 nagios_version: 4.3.2
+nagios_plugin_version: 2.1.1
 # Define the download url for the Nagios Core source files and the version you want to use.
 nagiosurl: "https://assets.nagios.com/downloads/nagioscore/releases/nagios-{{ nagios_version }}.tar.gz"
 
@@ -15,11 +16,11 @@ nagiosurl: "https://assets.nagios.com/downloads/nagioscore/releases/nagios-{{ na
 nagiossrc: "nagios-{{ nagios_version }}"
 
 # Define the download url for the Plugins and the version you want to use.
-pluginsurl: http://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+pluginsurl: "http://nagios-plugins.org/download/nagios-plugins-{{ nagios_plugin_version }}.tar.gz"
 # This is the directory where the Plugin source files will be placed, this should be
 # the directory which is created when the download file is unpacked when runnint
 # tar -xzvf nagios-plugins-2.2.1.tar.gz
-pluginssrc: nagios-plugins-2.2.1
+pluginssrc: "nagios-plugins-{{ nagios_plugin_version }}"
 
 monitoring_user: nagios
 monitoring_command_group: nagcmd
